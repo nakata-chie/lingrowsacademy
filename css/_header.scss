@@ -1,0 +1,270 @@
+@use "_mixin.scss" as m;
+@use "_variables.scss" as v;
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: v.$color-brown;
+
+    .site-logo {
+        width: 240px;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.header-inner {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    position: relative;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-block: 32px 22px;
+    padding-inline: 24px;
+}
+
+@include m.pc {
+    #header {
+        .site-logo {
+            width: 160px;
+        }
+    }
+
+    .header-inner {
+        padding-block: 8px;
+        padding-inline: 16px;
+    }
+}
+
+.nav-menu {
+    display: flex;
+    gap: 32px;
+
+    a {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 100%;
+            height: 2px;
+            background-color: v.$fc-white;
+            border-radius: 4px;
+            transform-origin: left top;
+            transform: scaleX(0);
+            transition: v.$animation03;
+        }
+
+        &:hover::after {
+            transform: scaleX(1);
+        }
+    }
+}
+
+.nav-en,
+.nav-ja {
+    font-family: v.$font-biz;
+}
+
+.nav-en {
+    margin-bottom: 4px;
+    font-size: v.$fs16;
+}
+
+.nav-ja {
+    font-size: v.$fs12;
+}
+
+@include m.pc {
+    .nav-menu {
+        display: none;
+    }
+}
+
+//問い合わせ/入会申し込みボタン
+.contact-btn-flex {
+    display: flex;
+    gap: 16px;
+    position: fixed;
+    top: 0;
+    right: 24px;
+}
+
+.header-btn {
+    border-radius: 0 0 8px 8px;
+
+    a {
+        padding: 12px 24px;
+    }
+}
+
+.contact-btn {
+    background-color: v.$accent-orange;
+}
+
+.joining-btn {
+    background-color: v.$accent-red;
+}
+
+@include m.pc {
+    .contact-btn-flex {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        justify-content: center;
+        padding-top: 8px;
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    .header-btn {
+        border-radius: 8px 8px 0 0;
+    }
+}
+
+/* ------------------------------
+ハンバーガーメニュー
+------------------------------ */
+.hamburger-btn {
+    display: none;
+}
+
+@include m.pc {
+    .hamburger-btn {
+        display: block;
+        position: fixed;
+        top: 8px;
+        right: 8px;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .hamburger-btn span {
+        display: inline-block;
+        width: 50%;
+        height: 2px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: v.$color-beige;
+        border-radius: 8px;
+        transition: v.$animation03;
+        z-index: 1000;
+    }
+
+    .hamburger-btn span:nth-of-type(1) {
+        top: 13px;
+    }
+
+    .hamburger-btn span:nth-of-type(2) {
+        top: 19px;
+    }
+
+    .hamburger-btn span:nth-of-type(3) {
+        top: 25px;
+    }
+
+    .hamburger-btn span:nth-of-type(3)::after {
+        content: "Menu";
+        position: absolute;
+        top: 3px;
+        left: -2px;
+        font-size: v.$fs12;
+        color: v.$color-beige;
+    }
+
+    // ハンバーガーメニュークリック時 
+    .open .hamburger-btn span {
+        background: v.$color-light-brown;
+    }
+
+    .open .hamburger-btn span:nth-of-type(1) {
+        width: 50%;
+        top: 27%;
+        left: 49%;
+        transform: translate(-50%, 5px) rotate(-45deg);
+    }
+
+    .open .hamburger-btn span:nth-of-type(2) {
+        opacity: 0;
+    }
+
+    .open .hamburger-btn span:nth-of-type(3) {
+        width: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -6px) rotate(45deg);
+    }
+
+    .open .hamburger-btn span:nth-of-type(3)::after {
+        content: "Close";
+        top: 6px;
+        left: 10px;
+        transform: translateY(0) rotate(-45deg);
+        color: v.$color-light-brown;
+    }
+}
+
+//mask
+.mask {
+    display: none;
+}
+
+.open .mask {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    width: 100vw;
+    height: 100vh;
+    background-color: v.$color-beige;
+}
+
+//nav open時
+.responsive-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 300;
+    width: 80%;
+    height: 100vh;
+    padding-top: 60px;
+    background-color: v.$color-white;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s;
+}
+
+.open .responsive-nav {
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.8s;
+
+    .sidebar-nav {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        margin-top: 0;
+
+        .responsive-logo {
+            margin-bottom: 24px;
+        }
+    }
+}

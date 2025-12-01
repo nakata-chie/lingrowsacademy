@@ -1,0 +1,56 @@
+@use "_mixin.scss" as m;
+@use "_variables.scss" as v;
+
+.access-inner {
+    padding: 40px;
+    margin-bottom: 40px;
+    background-color: v.$fc-white;
+    box-shadow: 2px 2px 4px #F4EDE5;
+    border: 1px solid #F4EDE5;
+    border-radius: v.$br24;
+
+    .access-text:last-of-type {
+        margin-bottom: 24px;
+    }
+}
+
+@include m.tab {
+    .access-inner {
+        padding: 24px;
+    }
+}
+
+.access-text-title {
+    margin-bottom: 24px;
+    font-size: clamp(1.25rem, 1.052rem + 0.99vw, 1.5rem);
+}
+
+.access-text {
+    margin-bottom: 16px;
+}
+
+.access-inner {
+    .access-text:last-of-type {
+        margin-bottom: 24px;
+    }
+}
+
+
+.map {
+    margin-bottom: 64px;
+
+    iframe {
+        width: 100%;
+        border-radius: v.$br24;
+    }
+}
+
+#access {
+    .contact-mail {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 16px;
+        font-size: clamp(13px, 3.8vw, 16px);
+        color: v.$color-light-brown;
+    }
+}

@@ -1,0 +1,66 @@
+//color
+$color-brown: #60451B;
+$color-light-brown: #AD9C80;
+$color-beige: #FFF6E9;
+$color-white: #FFFFFF;
+$accent-red: #DD765B;
+$accent-red04: rgba(220, 119, 91, 0.4);
+$accent-red02: rgba(220, 119, 91, 0.2);
+$accent-blue: #1499B9;
+$accent-blue04: rgba(20, 153, 185, 0.4);
+$accent-blue02: rgba(20, 153, 185, 0.2);
+$accent-purple: #8D60C4;
+$accent-purple04: rgba(151, 71, 255, 0.4);
+$accent-purple02: rgba(151, 71, 255, 0.2);
+$accent-orange: #E39B2B;
+$accent-orange04: rgba(227, 155, 43, 0.4);
+$accent-orange02: rgba(227, 155, 43, 0.2);
+$accent-green: #25AD6B;
+$accent-green04: rgba(37, 173, 107, 0.4);
+$accent-green02: rgba(37, 173, 107, 0.2);
+
+//border-radius 
+$br08: 8px;
+$br24: 24px;
+$br9999: 9999px;
+
+//文字色
+$fc-black: #292928;
+$fc-brown: #332003;
+$fc-gray: #6C6C6C;
+$fc-white: #FFFFFF;
+
+//font-size
+//本文
+$fs12: 0.75rem;
+$fs14: 0.875rem;
+$fs15: rem;
+$fs16: 1rem;
+$fs18: 1.125rem;
+//小見出し
+$fs20: 1.25rem;
+$fs22: 1.375rem;
+$fs24: 1.5rem;
+$fs28: 1.75rem;
+//タイトル
+$fs32: 2rem;
+$fs40: 2.5rem;
+$fs48: 3rem;
+//メインビジュアル他
+
+
+//font-family
+$font-biz: "BIZ UDPGothic", sans-serif;
+$font-nsj: "Noto Sans JP", sans-serif;
+$font-sm: "Shippori Mincho", serif;
+$font-ab: "Aboreto", system-ui;
+$font-gv: "Great Vibes", cursive;
+
+// line-height 1.4～1.8
+$lh14: 1.4;
+
+// letter-spacing 0.04em～0.1em
+$ls4: 0.04em;
+
+//アニメーション
+$animation03: all 0.3s;

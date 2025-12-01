@@ -1,0 +1,238 @@
+@use "_mixin.scss" as m;
+@use "_variables.scss" as v;
+
+#flow {
+    margin-bottom: 88px;
+}
+
+.flow-step-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    img {
+        width: 20%;
+        height: 80px;
+        object-fit: cover;
+        border-radius: v.$br08;
+    }
+}
+
+@include m.sp {
+    .flow-step-items {
+        flex-direction: column;
+
+        img {
+            width: 70%;
+        }
+    }
+}
+
+//LINEボタン
+.contact-line-btn {
+    text-align: center;
+
+    p {
+        margin-bottom: 4px;
+    }
+
+    a {
+        display: inline-block;
+        border-radius: 10px;
+        box-shadow: 0px 4px 4px rgba(173, 156, 128, 0.5);
+        transition: v.$animation03;
+
+        &:hover {
+            background-color: v.$color-brown;
+            box-shadow: none;
+            transform: translateY(4px);
+        }
+    }
+}
+
+/* ------------------------------
+無料体験
+------------------------------ */
+#trial {
+    padding-top: 152px;
+    margin-top: -120px;
+
+    .course-content {
+        margin-bottom: 0;
+    }
+}
+
+@include m.pc {
+    #trial {
+        padding-block: 88px;
+        margin-top: -64px;
+    }
+}
+
+/* ------------------------------
+contact/Q&A
+------------------------------ */
+#page-faq {
+    padding-top: 152px;
+    margin-top: -120px;
+}
+
+@include m.pc {
+    #page-faq {
+        padding-block: 88px;
+        margin-top: -64px;
+    }
+}
+
+/* ------------------------------
+contact/お問い合わせについて
+------------------------------ */
+#page-contact {
+    padding-top: 152px;
+    margin-top: -120px;
+    margin-bottom: 64px;
+}
+
+@include m.pc {
+    #page-contact {
+        padding-top: 88px;
+        margin-top: -64px;
+    }
+}
+
+.page-contact-inner {
+    position: relative;
+    padding: 40px;
+    background-color: #F4EDE5;
+    border-radius: v.$br24;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        width: 30px;
+        height: 30px;
+    }
+
+    &::before {
+        top: 0;
+        left: 0;
+        background-color: v.$accent-red;
+        border-top-left-radius: v.$br24;
+    }
+
+    &::after {
+        top: 0;
+        right: 0;
+        background-color: v.$accent-blue;
+        border-top-right-radius: v.$br24;
+    }
+}
+
+@include m.tab {
+    .page-contact-inner {
+        padding-inline: 16px;
+    }
+}
+
+//contact文章部分
+.contact-contents {
+    margin-top: 40px;
+    padding: 24px;
+    border: 1px solid v.$color-light-brown;
+    border-radius: v.$br08;
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 10;
+        width: 30px;
+        height: 30px;
+    }
+
+    &::before {
+        bottom: 0;
+        left: 0;
+        background-color: v.$accent-green;
+        border-bottom-left-radius: v.$br24;
+    }
+
+    &::after {
+        bottom: 0;
+        right: 0;
+        background-color: v.$accent-orange;
+        border-bottom-right-radius: v.$br24;
+    }
+}
+
+.contact-text-area {
+    .contact-step:nth-of-type(3) {
+        margin-bottom: 8px;
+    }
+}
+
+.contact-step {
+    margin-bottom: 24px;
+    font-size: v.$fs18;
+    font-weight: 500;
+    letter-spacing: v.$ls4;
+
+    span {
+        font-size: v.$fs20;
+        font-weight: bold;
+        color: v.$color-brown;
+    }
+
+    .contact-mail {
+        display: inline-block;
+        width: 100%;
+        margin-top: 4px;
+        font-size: clamp(13px, 3.8vw, 16px);
+        color: v.$color-light-brown;
+    }
+}
+
+.lesson-list {
+    margin-bottom: 24px;
+
+    li {
+        &::before {
+            content: "・";
+            color: v.$accent-red;
+        }
+    }
+}
+
+.contact-message {
+    margin-top: 40px;
+}
+
+//snsアイコン
+.sns-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+
+    .line-icon {
+        width: 45px;
+    }
+
+    .instagram-icon {
+        width: 50px;
+    }
+
+    img {
+        height: auto;
+        object-fit: cover;
+        transition: v.$animation03;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}

@@ -1,0 +1,293 @@
+@use "_mixin.scss" as m;
+@use "_variables.scss" as v;
+
+.course-container {
+    margin-bottom: 88px;
+}
+
+.course-content {
+    padding: 40px;
+    margin-bottom: 40px;
+    background-color: v.$fc-white;
+    box-shadow: 2px 2px 4px #F4EDE5;
+    border: 1px solid #F4EDE5;
+    border-radius: v.$br24;
+}
+
+@include m.tab {
+    .course-content {
+        padding: 24px;
+    }
+}
+
+.course-title {
+    margin-bottom: 8px;
+    font-weight: 900;
+}
+
+@include m.pc {
+    .course-title {
+        font-size: v.$fs20;
+    }
+}
+
+
+.course-text {
+    margin-bottom: 24px;
+}
+
+.course-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+
+    li {
+        width: calc(100% / 3);
+        padding: 24px;
+        background-color: #F4EDE5;
+        border-radius: v.$br08;
+    }
+}
+
+.course-item-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+
+    p {
+        color: v.$fc-brown;
+        font-weight: bold;
+    }
+}
+
+.start-time {
+    padding: 4px;
+    margin-top: 8px;
+    background-color: v.$fc-white;
+    border: 1px solid v.$color-light-brown;
+    border-radius: v.$br08;
+}
+
+@include m.tab {
+    .course-item {
+        flex-direction: column;
+
+        li {
+            width: 100%;
+        }
+    }
+}
+
+//コースの特徴
+.course-point {
+    padding: 24px;
+    margin-block: 24px;
+    border: 1px solid v.$color-light-brown;
+    border-radius: v.$br08;
+}
+
+.course-point-title {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: v.$color-brown;
+}
+
+.course-point-texts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px;
+}
+
+.course-point-text {
+    width: 49%;
+
+    &::before {
+        content: "・";
+        color: v.$accent-red;
+    }
+}
+
+@include m.pc {
+    .course-point-texts {
+        flex-direction: column;
+    }
+
+    .course-point-text {
+        width: 100%;
+    }
+}
+
+/* ------------------------------
+VOICE/参加者の声
+------------------------------ */
+#page-voice {
+    padding-block: 152px 64px;
+    margin-top: -120px;
+}
+
+@include m.pc {
+    #page-voice {
+        padding-block: 88px;
+        margin-top: -64px;
+    }
+}
+
+.voice-message {
+    width: 98%;
+    margin-block: 40px;
+    margin-inline: auto;
+}
+
+.voice-list {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    margin-block: 64px 48px;
+
+    li {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+    }
+}
+
+.voice-text-box {
+    position: relative;
+    width: 60%;
+    padding: 48px;
+    background-color: v.$color-beige;
+    border: 10px solid v.$accent-red02;
+    border-radius: 64px 0 64px 0;
+
+    .voice-accent {
+        position: absolute;
+        top: 0;
+        left: -16px;
+        transform: translateY(-56%);
+    }
+}
+
+@include m.pc {
+    .voice-text-box {
+        width: 100%;
+        padding: 48px 24px;
+    }
+}
+
+//文章枠の色変え
+.voice-list {
+    li {
+        &:nth-of-type(2) {
+            .voice-text-box {
+                border-color: v.$accent-green02;
+            }
+        }
+
+        &:nth-of-type(3) {
+            .voice-text-box {
+                border-color: v.$accent-purple02;
+            }
+        }
+
+        &:nth-of-type(4) {
+            .voice-text-box {
+                border-color: v.$accent-orange02;
+            }
+        }
+    }
+}
+
+.voice-text-title {
+    margin-bottom: 16px;
+    font-family: v.$font-biz;
+    font-size: v.$fs24;
+    font-weight: bold;
+    letter-spacing: v.$ls4;
+    line-height: v.$lh14;
+    color: v.$color-brown;
+}
+
+@include m.pc {
+    .voice-text-title {
+        font-size: v.$fs20;
+    }
+}
+
+
+.voice-text {
+    font-family: v.$font-nsj;
+    font-size: v.$fs16;
+}
+
+.sp-voice-img {
+    display: none;
+
+    img {
+        width: 100%;
+        filter: blur(0.8px)
+    }
+}
+
+//通常時の画像
+.pc-voice-img {
+    position: relative;
+    z-index: 1;
+    width: 40%;
+    margin-bottom: 48px;
+    margin-left: -48px;
+    box-shadow: 8px 8px 4px v.$accent-red04;
+
+    img {
+        width: 100%;
+        filter: blur(0.8px)
+    }
+}
+
+@include m.pc {
+    .sp-voice-img {
+        display: block;
+        margin-top: 24px;
+        border-radius: 64px 8px 64px 8px;
+
+        img {
+            border-radius: 64px 8px 64px 8px;
+        }
+    }
+
+    .pc-voice-img {
+        display: none;
+    }
+}
+
+//画像の影色変え/配置換え
+.voice-list {
+    li {
+        &:nth-of-type(2) {
+            flex-direction: row-reverse;
+
+            .pc-voice-img {
+                margin-left: 0;
+                margin-right: -40px;
+                box-shadow: 8px 8px 4px v.$accent-green02;
+            }
+        }
+
+        &:nth-of-type(3) {
+            .pc-voice-img {
+                box-shadow: 8px 8px 4px v.$accent-purple02;
+            }
+        }
+
+        &:nth-of-type(4) {
+            flex-direction: row-reverse;
+
+            .pc-voice-img {
+                margin-left: 0;
+                margin-right: -40px;
+                box-shadow: 8px 8px 4px v.$accent-orange02;
+            }
+        }
+    }
+}

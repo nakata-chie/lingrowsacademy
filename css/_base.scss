@@ -1,0 +1,203 @@
+@use "_mixin.scss" as m;
+@use "_variables.scss" as v;
+
+body {
+    background-image: url(../img/site-bg.png);
+    background-repeat: repeat;
+    font-size: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: v.$fc-white;
+}
+
+span {
+    display: block;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+
+h2 {
+    font-family: v.$font-sm;
+    color: v.$color-brown;
+}
+
+p {
+    color: v.$fc-black;
+}
+
+.wrapper {
+    /*  border: 2px solid red; */
+    max-width: 1000px;
+    margin-inline: auto;
+    padding: 24px;
+}
+
+@include m.pc {
+    .wrapper {
+        padding: 3%;
+    }
+}
+
+.section-wrapper {
+    padding-block: 64px;
+}
+
+//sectionタイトル
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+
+    .title-line {
+        content: "";
+        flex: 1px;
+        height: 1px;
+        border-top: 1px solid rgba(96, 69, 27, 0.5);
+    }
+}
+
+.section-title-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    span {
+        font-weight: 400;
+    }
+}
+
+.section-title-en {
+    margin-bottom: 10px;
+    font-size: v.$fs40;
+    letter-spacing: 0.04em;
+    line-height: 1;
+}
+
+.section-title-ja {
+    font-size: v.$fs20;
+    letter-spacing: -0.08em;
+    line-height: 1;
+}
+
+@include m.pc {
+    .section-title-en {
+        font-size: v.$fs28;
+    }
+
+    .section-title-ja {
+        font-size: v.$fs18;
+    }
+}
+
+
+//topページボタン(3種類)
+.contact-page-btn {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+
+    li {
+        width: calc(80% / 3);
+        border-radius: 8px;
+        text-align: center;
+
+        &:nth-child(1) {
+            background-color: v.$accent-green;
+        }
+
+        &:nth-child(2) {
+            background-color: v.$accent-red;
+        }
+
+        &:nth-child(3) {
+            background-color: v.$accent-orange;
+        }
+
+        a {
+            padding-block: 12px;
+            border-radius: 8px;
+            font-family: v.$font-biz;
+            transition: v.$animation03;
+
+            &:hover {
+                background-color: v.$color-brown;
+            }
+        }
+    }
+}
+
+.faq-btn {
+    background-color: v.$accent-blue;
+}
+
+@include m.tab {
+    .contact-page-btn {
+        flex-direction: column;
+        gap: 16px;
+
+        li {
+            width: 100%;
+
+            a {
+                padding-block: 16px;
+            }
+        }
+    }
+}
+
+//pageタイトル
+.page-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 1000px;
+    margin-inline: auto;
+    padding-block: 16px;
+    padding-inline: 24px;
+    margin-top: 144px;
+    background: linear-gradient(135deg, #AD9C80 0%, #D6CCBD 60%, #FFFDFA 100%);
+    font-family: v.$font-sm;
+    color: v.$fc-white;
+    line-height: 1;
+
+    .page-title-en {
+        font-size: v.$fs40;
+        font-weight: 500;
+        letter-spacing: v.$ls4;
+    }
+
+    .page-title-ja {
+        font-size: v.$fs24;
+        font-weight: 400;
+    }
+}
+
+@include m.pc {
+    .page-title {
+        flex-direction: row;
+        align-items: flex-end;
+        padding-inline: 16px;
+        margin-top: 58px;
+
+        .page-title-en {
+            font-size: v.$fs28;
+        }
+
+        .page-title-ja {
+            font-size: v.$fs18;
+        }
+    }
+}

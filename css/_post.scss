@@ -1,0 +1,65 @@
+@use "_mixin.scss" as m;
+@use "_variables.scss" as v;
+
+@include m.pc {
+    #single-post {
+        min-height: 100vh;
+    }
+}
+
+.post-box {
+    padding: 40px;
+    background-color: v.$fc-white;
+    box-shadow: 2px 2px 4px #F4EDE5;
+    border: 1px solid #F4EDE5;
+    border-radius: v.$br24;
+}
+
+@include m.tab {
+    .post-box {
+        padding: 24px;
+    }
+}
+
+
+.post-img {
+    margin-block: 24px;
+    text-align: center;
+
+    img {
+        width: 80%;
+        height: auto;
+        object-fit: cover;
+        border-radius: v.$br08;
+    }
+}
+
+.news-day {
+    margin-bottom: 4px;
+}
+
+.category {
+    display: inline-block;
+    padding: 4px 16px;
+    background-color: v.$color-light-brown;
+    border-radius: 9999px;
+    font-size: v.$fs12;
+    color: v.$fc-white;
+}
+
+.news-day,
+.news-title,
+.news-text {
+    color: v.$color-brown;
+}
+
+.post-box {
+    .news-title {
+        margin-top: 8px;
+        font-family: v.$font-biz;
+        font-weight: bold;
+        font-size: v.$fs22;
+        line-height: v.$lh14;
+        letter-spacing: v.$ls4;
+    }
+}
