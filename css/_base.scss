@@ -14,6 +14,8 @@ li {
 a {
     display: block;
     text-decoration: none;
+    font-family: v.$font-biz;
+    letter-spacing: v.$ls4;
     color: v.$fc-white;
 }
 
@@ -33,7 +35,16 @@ h2 {
 }
 
 p {
+    font-family: v.$font-biz;
     color: v.$fc-black;
+    line-height: v.$lh15;
+    letter-spacing: v.$ls4;
+}
+
+@include m.tab {
+    p {
+        font-size: v.$fs15;
+    }
 }
 
 .wrapper {
@@ -52,6 +63,13 @@ p {
 .section-wrapper {
     padding-block: 64px;
 }
+
+@include m.pc {
+    .section-wrapper {
+        padding-block: 32px 64px;
+    }
+}
+
 
 //sectionタイトル
 .section-title {
@@ -94,11 +112,12 @@ p {
 
 @include m.pc {
     .section-title-en {
-        font-size: v.$fs28;
+        margin-bottom: 6px;
+        font-size: v.$fs24;
     }
 
     .section-title-ja {
-        font-size: v.$fs18;
+        font-size: v.$fs16;
     }
 }
 
@@ -114,34 +133,32 @@ p {
         border-radius: 8px;
         text-align: center;
 
-        &:nth-child(1) {
-            background-color: v.$accent-green;
-        }
-
-        &:nth-child(2) {
-            background-color: v.$accent-red;
-        }
-
-        &:nth-child(3) {
-            background-color: v.$accent-orange;
-        }
-
         a {
+            display: block;
             padding-block: 12px;
             border-radius: 8px;
             font-family: v.$font-biz;
             transition: v.$animation03;
+        }
 
-            &:hover {
-                background-color: v.$color-brown;
-            }
+        &:nth-child(1) a {
+            background-color: v.$accent-green;
+        }
+
+        &:nth-child(2) a {
+            background-color: v.$accent-red;
+        }
+
+        &:nth-child(3) a {
+            background-color: v.$accent-orange;
+        }
+
+        a:hover {
+            opacity: v.$op;
         }
     }
 }
 
-.faq-btn {
-    background-color: v.$accent-blue;
-}
 
 @include m.tab {
     .contact-page-btn {
@@ -158,29 +175,35 @@ p {
     }
 }
 
+.course-content {
+    .faq-btn {
+        background-color: v.$accent-blue !important;
+    }
+}
+
 //pageタイトル
 .page-title {
     display: flex;
-    flex-direction: column;
+    align-items: flex-end;
     gap: 4px;
     max-width: 1000px;
     margin-inline: auto;
     padding-block: 16px;
     padding-inline: 24px;
-    margin-top: 144px;
+    margin-top: 100px;
     background: linear-gradient(135deg, #AD9C80 0%, #D6CCBD 60%, #FFFDFA 100%);
     font-family: v.$font-sm;
     color: v.$fc-white;
     line-height: 1;
 
     .page-title-en {
-        font-size: v.$fs40;
+        font-size: v.$fs34;
         font-weight: 500;
         letter-spacing: v.$ls4;
     }
 
     .page-title-ja {
-        font-size: v.$fs24;
+        font-size: v.$fs20;
         font-weight: 400;
     }
 }
@@ -188,7 +211,6 @@ p {
 @include m.pc {
     .page-title {
         flex-direction: row;
-        align-items: flex-end;
         padding-inline: 16px;
         margin-top: 58px;
 

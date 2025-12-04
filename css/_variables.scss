@@ -32,9 +32,11 @@ $fc-white: #FFFFFF;
 
 //font-size
 //本文
+$fs11: 0.6875rem;
 $fs12: 0.75rem;
+$fs13: 0.8125rem;
 $fs14: 0.875rem;
-$fs15: rem;
+$fs15: 0.9375rem;
 $fs16: 1rem;
 $fs18: 1.125rem;
 //小見出し
@@ -44,23 +46,23 @@ $fs24: 1.5rem;
 $fs28: 1.75rem;
 //タイトル
 $fs32: 2rem;
+$fs34: 2.125rem;
 $fs40: 2.5rem;
 $fs48: 3rem;
-//メインビジュアル他
-
 
 //font-family
 $font-biz: "BIZ UDPGothic", sans-serif;
-$font-nsj: "Noto Sans JP", sans-serif;
 $font-sm: "Shippori Mincho", serif;
-$font-ab: "Aboreto", system-ui;
-$font-gv: "Great Vibes", cursive;
+
 
 // line-height 1.4～1.8
 $lh14: 1.4;
-
+$lh15: 1.5;
 // letter-spacing 0.04em～0.1em
 $ls4: 0.04em;
+
+//opacity
+$op: 0.9;
 
 //アニメーション
 $animation03: all 0.3s;

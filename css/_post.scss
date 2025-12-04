@@ -21,7 +21,6 @@
     }
 }
 
-
 .post-img {
     margin-block: 24px;
     text-align: center;
@@ -36,6 +35,8 @@
 
 .news-day {
     margin-bottom: 4px;
+    font-family: v.$font-biz;
+    font-size: v.$fs14;
 }
 
 .category {
@@ -43,6 +44,7 @@
     padding: 4px 16px;
     background-color: v.$color-light-brown;
     border-radius: 9999px;
+    font-family: v.$font-biz;
     font-size: v.$fs12;
     color: v.$fc-white;
 }

@@ -8,12 +8,19 @@
   background-color: #60451B;
 }
 #header .site-logo {
-  width: 240px;
+  width: 180px;
+  transform: translateY(-4px);
 }
 #header .site-logo img {
+  display: block;
   width: 100%;
 }
 
+@media screen and (max-width: 1024px) {
+  #header .site-logo {
+    transform: translateY(0);
+  }
+}
 .header-inner {
   display: flex;
   align-items: end;
@@ -21,7 +28,7 @@
   position: relative;
   max-width: 1440px;
   margin-inline: auto;
-  padding-block: 32px 22px;
+  padding-block: 24px 12px;
   padding-inline: 24px;
 }
 
@@ -45,9 +52,9 @@
   content: "";
   position: absolute;
   left: 0;
-  bottom: -8px;
+  bottom: -4px;
   width: 100%;
-  height: 2px;
+  height: 1px;
   background-color: #FFFFFF;
   border-radius: 4px;
   transform-origin: left top;
@@ -65,11 +72,12 @@
 
 .nav-en {
   margin-bottom: 4px;
-  font-size: 1rem;
+  font-size: 0.9375rem;
 }
 
 .nav-ja {
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
 }
 
 @media screen and (max-width: 1024px) {
@@ -85,19 +93,20 @@
   right: 24px;
 }
 
-.header-btn {
-  border-radius: 0 0 8px 8px;
-}
 .header-btn a {
-  padding: 12px 24px;
+  padding: 10px 24px;
+  border-radius: 0 0 8px 8px;
+  font-size: 0.875rem;
+  transition: all 0.3s;
 }
-
-.contact-btn {
-  background-color: #E39B2B;
+.header-btn a:hover {
+  opacity: 0.9;
 }
-
-.joining-btn {
+.header-btn .joining-btn {
   background-color: #DD765B;
+}
+.header-btn .contact-btn {
+  background-color: #E39B2B;
 }
 
 @media screen and (max-width: 1024px) {
@@ -110,8 +119,10 @@
     padding-top: 8px;
     background: rgba(255, 255, 255, 0.9);
   }
-  .header-btn {
+  .header-btn a {
+    padding: 12px 24px;
     border-radius: 8px 8px 0 0;
+    font-size: 0.9375rem;
   }
 }
 /* ------------------------------
@@ -125,7 +136,7 @@
   .hamburger-btn {
     display: block;
     position: fixed;
-    top: 8px;
+    top: 4px;
     right: 8px;
     width: 50px;
     height: 50px;
@@ -240,7 +251,7 @@
 .top-visual-inner {
   background-color: #FFF6E9;
   border-radius: 24px;
-  margin-top: 120px;
+  margin-top: 88px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -355,9 +366,10 @@
 .mainvisual-btn a {
   display: inline-block;
   padding: 8px 20px;
-  border-radius: 9999px;
   background-color: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(173, 156, 128, 0.5);
   border: 1px solid #60451B;
+  border-radius: 9999px;
   color: #60451B;
   transition: all 0.3s;
 }
@@ -369,7 +381,9 @@
 }
 .mainvisual-btn a:hover {
   background-color: #60451B;
+  box-shadow: none;
   color: #FFFFFF;
+  transform: translateY(4px);
 }
 .mainvisual-btn a:hover::after {
   transform: translateX(8px);
@@ -416,11 +430,14 @@
 }
 .pickup-title {
   display: flex;
+  align-items: center;
   gap: 24px;
   padding: 24px;
 }
 .pickup-title .pickup-news-day {
   width: 84px;
+  font-family: "BIZ UDPGothic", sans-serif;
+  font-size: 0.875rem;
 }
 .pickup-title .pickup-news-title a {
   color: #292928;
@@ -429,7 +446,8 @@
 @media screen and (max-width: 1024px) {
   .pickup-title {
     flex-direction: column;
-    gap: 0;
+    align-items: flex-start;
+    gap: 4px;
   }
 }
 .news-read-btn {
@@ -437,6 +455,9 @@
   text-align: right;
 }
 .news-read-btn a {
+  position: relative;
+  z-index: 1;
+  font-size: 0.875rem;
   color: #332003;
   transition: all 0.3s;
 }
@@ -614,10 +635,11 @@ mainコンテンツ
   display: inline-block;
   padding: 8px 48px;
   background-color: #E39B2B;
-  border-radius: 9999px;
   box-shadow: 0px 4px 4px rgba(173, 156, 128, 0.5);
+  border: 3px solid #DD765B;
+  border-radius: 9999px;
   font-family: "Shippori Mincho", serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   transition: all 0.3s;
 }
 .trial-btn a::after {
@@ -627,7 +649,7 @@ mainコンテンツ
   transition: all 0.3s;
 }
 .trial-btn a:hover {
-  background-color: #60451B;
+  background-color: #DD765B;
   box-shadow: none;
   transform: translateY(4px);
 }
@@ -645,9 +667,19 @@ mainコンテンツ
 /* ------------------------------
 ABOUT US/私たちにについて
 ------------------------------ */
-.about-message {
-  padding-block: 152px 32px;
+#about {
+  padding-block: 128px 32px;
   margin-top: -120px;
+}
+
+@media screen and (max-width: 1024px) {
+  #about {
+    padding-top: 88px;
+    margin-top: -64px;
+  }
+}
+.about-message {
+  margin-top: 24px;
   text-align: center;
 }
 
@@ -655,7 +687,7 @@ ABOUT US/私たちにについて
   display: inline-block;
   margin-bottom: 16px;
   border-bottom: 1px solid #60451B;
-  font-size: 2rem;
+  font-size: 1.5rem;
   letter-spacing: -0.08em;
 }
 
@@ -684,6 +716,11 @@ ABOUT US/私たちにについて
   text-align: left;
 }
 
+@media screen and (max-width: 1024px) {
+  .about-message-text {
+    font-size: 1rem;
+  }
+}
 .about-items {
   margin-bottom: 64px;
 }
@@ -696,7 +733,7 @@ ABOUT US/私たちにについて
 .about-item {
   position: relative;
   padding: 40px;
-  margin-top: 64px;
+  margin-top: 100px;
   background-image: url(../img/about01-bg.png);
   background-repeat: no-repeat;
   background-position: center;
@@ -704,18 +741,16 @@ ABOUT US/私たちにについて
 }
 .about-item:nth-child(2) {
   background-image: url(../img/about02-bg.png);
+  margin-top: 64px;
 }
 .about-item:nth-child(3) {
-  margin-top: 80px;
+  margin-top: 120px;
 }
 
 @media screen and (max-width: 1024px) {
   .about-item {
     padding: 24px 32px;
-    margin-top: 32px;
-  }
-  .about-item:nth-child(3) {
-    margin-top: 32px;
+    margin-top: 72px;
   }
 }
 @media screen and (max-width: 640px) {
@@ -733,7 +768,7 @@ ABOUT US/私たちにについて
 }
 .about-number {
   position: absolute;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 1024px) {
@@ -753,7 +788,7 @@ ABOUT US/私たちにについて
 
 @media screen and (max-width: 1024px) {
   .about-img {
-    width: 30%;
+    width: 24%;
   }
 }
 .img-right-position {
@@ -799,13 +834,14 @@ ABOUT US/私たちにについて
   }
 }
 .about-texts {
-  padding: 80px 40px 40px 40px;
+  padding: 80px 40px 40px 56px;
 }
 .about-texts .about-texts-title {
-  width: 60%;
-  margin-bottom: 8px;
+  width: 80%;
+  margin-bottom: 6px;
   font-family: "BIZ UDPGothic", sans-serif;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
+  font-weight: bold;
   line-height: 1.4;
   letter-spacing: 0.04em;
   text-align: left;
@@ -813,13 +849,11 @@ ABOUT US/私たちにについて
 }
 .about-texts .about-texts-text {
   font-size: 1rem;
-  line-height: 1.5;
-  letter-spacing: 0.05em;
 }
 
 @media screen and (max-width: 1024px) {
   .about-texts {
-    padding: 100px 40px 56px 40px;
+    padding: 100px 40px 56px 56px;
   }
   .about-texts .about-texts-title {
     width: 70%;
@@ -860,12 +894,9 @@ ABOUT US/私たちにについて
     transform: translateY(40%);
   }
 }
-.about-item02 .about-texts-title {
-  width: 64%;
-  margin-left: auto;
-}
+.about-item02 .about-texts-title,
 .about-item02 .about-texts-text {
-  width: 64%;
+  width: 66%;
   margin-left: auto;
 }
 
@@ -892,9 +923,9 @@ ABOUT US/私たちにについて
   }
   .about-responsive-img {
     display: block;
-    width: 70%;
+    width: 60%;
     margin-inline: auto;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 }
 .scroll-blur-item {
@@ -1032,7 +1063,7 @@ FLOW/入会申し込みの流れ
   font-weight: bold;
   color: #332003;
   line-height: 1.4;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
 }
 
 /* ------------------------------
@@ -1048,9 +1079,14 @@ Q&A/よくあるご質問
   font-family: "BIZ UDPGothic", sans-serif;
   color: #332003;
   line-height: 1.4;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
 }
 
+@media screen and (max-width: 640px) {
+  .ac-area {
+    margin-block: 32px 48px;
+  }
+}
 .ac-item {
   background-color: #FFFFFF;
   border: 1px solid rgba(173, 156, 128, 0.5);
@@ -1227,7 +1263,6 @@ footer
 }
 .course-text {
   margin-bottom: 24px;
-  line-height: 1.5;
 }
 
 .course-item {
@@ -1259,6 +1294,12 @@ footer
   background-color: #FFFFFF;
   border: 1px solid #AD9C80;
   border-radius: 8px;
+  font-size: 0.8125rem;
+  letter-spacing: 0;
+}
+
+.course-item-text {
+  font-size: 0.9375rem;
 }
 
 @media screen and (max-width: 640px) {
@@ -1309,7 +1350,7 @@ footer
 VOICE/参加者の声
 ------------------------------ */
 #page-voice {
-  padding-block: 152px 64px;
+  padding-block: 128px 64px;
   margin-top: -120px;
 }
 
@@ -1323,9 +1364,13 @@ VOICE/参加者の声
   width: 98%;
   margin-block: 40px;
   margin-inline: auto;
-  line-height: 1.5;
 }
 
+@media screen and (max-width: 640px) {
+  .voice-message {
+    margin-block: 32px;
+  }
+}
 .voice-list {
   display: flex;
   flex-direction: column;
@@ -1359,6 +1404,17 @@ VOICE/参加者の声
     padding: 48px 24px;
   }
 }
+@media screen and (max-width: 640px) {
+  .voice-list {
+    margin-block: 48px;
+  }
+  .voice-text-box {
+    padding: 32px 24px;
+  }
+  .voice-text-box .voice-accent {
+    width: 180px;
+  }
+}
 .voice-list li:nth-of-type(2) .voice-text-box {
   border-color: rgba(37, 173, 107, 0.2);
 }
@@ -1370,13 +1426,13 @@ VOICE/参加者の声
 }
 
 .voice-text-title {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   font-family: "BIZ UDPGothic", sans-serif;
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 0.04em;
-  line-height: 1.4;
+  font-size: 1.25rem;
   color: #60451B;
+  font-weight: bold;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
 }
 
 @media screen and (max-width: 1024px) {
@@ -1385,7 +1441,6 @@ VOICE/参加者の声
   }
 }
 .voice-text {
-  font-family: "Noto Sans JP", sans-serif;
   font-size: 1rem;
 }
 
@@ -1400,8 +1455,8 @@ VOICE/参加者の声
 .pc-voice-img {
   position: relative;
   z-index: 1;
-  width: 40%;
-  margin-bottom: 48px;
+  width: 32%;
+  margin-bottom: 24px;
   margin-left: -48px;
   box-shadow: 8px 8px 4px rgba(220, 119, 91, 0.4);
 }
@@ -1552,6 +1607,8 @@ VOICE/参加者の声
 
 .news-day {
   margin-bottom: 4px;
+  font-family: "BIZ UDPGothic", sans-serif;
+  font-size: 0.875rem;
 }
 
 .category {
@@ -1559,6 +1616,7 @@ VOICE/参加者の声
   padding: 4px 16px;
   background-color: #AD9C80;
   border-radius: 9999px;
+  font-family: "BIZ UDPGothic", sans-serif;
   font-size: 0.75rem;
   color: #FFFFFF;
 }
@@ -1643,7 +1701,7 @@ VOICE/参加者の声
 contact/Q&A
 ------------------------------ */
 #page-faq {
-  padding-top: 152px;
+  padding-top: 128px;
   margin-top: -120px;
 }
 
@@ -1657,7 +1715,7 @@ contact/Q&A
 contact/お問い合わせについて
 ------------------------------ */
 #page-contact {
-  padding-top: 152px;
+  padding-top: 128px;
   margin-top: -120px;
   margin-bottom: 64px;
 }
@@ -1751,7 +1809,7 @@ contact/お問い合わせについて
 .lesson-list {
   margin-bottom: 24px;
 }
-.lesson-list li::before {
+.lesson-list p::before {
   content: "・";
   color: #DD765B;
 }
@@ -1796,6 +1854,8 @@ li {
 a {
   display: block;
   text-decoration: none;
+  font-family: "BIZ UDPGothic", sans-serif;
+  letter-spacing: 0.04em;
   color: #FFFFFF;
 }
 
@@ -1816,9 +1876,17 @@ h2 {
 }
 
 p {
+  font-family: "BIZ UDPGothic", sans-serif;
   color: #292928;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
 }
 
+@media screen and (max-width: 640px) {
+  p {
+    font-size: 0.9375rem;
+  }
+}
 .wrapper {
   /*  border: 2px solid red; */
   max-width: 1000px;
@@ -1835,6 +1903,11 @@ p {
   padding-block: 64px;
 }
 
+@media screen and (max-width: 1024px) {
+  .section-wrapper {
+    padding-block: 32px 64px;
+  }
+}
 .section-title {
   display: flex;
   align-items: center;
@@ -1873,10 +1946,11 @@ p {
 
 @media screen and (max-width: 1024px) {
   .section-title-en {
-    font-size: 1.75rem;
+    margin-bottom: 6px;
+    font-size: 1.5rem;
   }
   .section-title-ja {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 }
 .contact-page-btn {
@@ -1889,27 +1963,24 @@ p {
   border-radius: 8px;
   text-align: center;
 }
-.contact-page-btn li:nth-child(1) {
-  background-color: #25AD6B;
-}
-.contact-page-btn li:nth-child(2) {
-  background-color: #DD765B;
-}
-.contact-page-btn li:nth-child(3) {
-  background-color: #E39B2B;
-}
 .contact-page-btn li a {
+  display: block;
   padding-block: 12px;
   border-radius: 8px;
   font-family: "BIZ UDPGothic", sans-serif;
   transition: all 0.3s;
 }
-.contact-page-btn li a:hover {
-  background-color: #60451B;
+.contact-page-btn li:nth-child(1) a {
+  background-color: #25AD6B;
 }
-
-.faq-btn {
-  background-color: #1499B9;
+.contact-page-btn li:nth-child(2) a {
+  background-color: #DD765B;
+}
+.contact-page-btn li:nth-child(3) a {
+  background-color: #E39B2B;
+}
+.contact-page-btn li a:hover {
+  opacity: 0.9;
 }
 
 @media screen and (max-width: 640px) {
@@ -1924,34 +1995,37 @@ p {
     padding-block: 16px;
   }
 }
+.course-content .faq-btn {
+  background-color: #1499B9 !important;
+}
+
 .page-title {
   display: flex;
-  flex-direction: column;
+  align-items: flex-end;
   gap: 4px;
   max-width: 1000px;
   margin-inline: auto;
   padding-block: 16px;
   padding-inline: 24px;
-  margin-top: 144px;
+  margin-top: 100px;
   background: linear-gradient(135deg, #AD9C80 0%, #D6CCBD 60%, #FFFDFA 100%);
   font-family: "Shippori Mincho", serif;
   color: #FFFFFF;
   line-height: 1;
 }
 .page-title .page-title-en {
-  font-size: 2.5rem;
+  font-size: 2.125rem;
   font-weight: 500;
   letter-spacing: 0.04em;
 }
 .page-title .page-title-ja {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 400;
 }
 
 @media screen and (max-width: 1024px) {
   .page-title {
     flex-direction: row;
-    align-items: flex-end;
     padding-inline: 16px;
     margin-top: 58px;
   }

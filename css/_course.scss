@@ -33,7 +33,6 @@
 
 .course-text {
     margin-bottom: 24px;
-    line-height: 1.5;
 }
 
 .course-item {
@@ -67,6 +66,12 @@
     background-color: v.$fc-white;
     border: 1px solid v.$color-light-brown;
     border-radius: v.$br08;
+    font-size: v.$fs13;
+    letter-spacing: 0;
+}
+
+.course-item-text {
+    font-size: v.$fs15;
 }
 
 @include m.tab {
@@ -123,7 +128,7 @@
 VOICE/参加者の声
 ------------------------------ */
 #page-voice {
-    padding-block: 152px 64px;
+    padding-block: 128px 64px;
     margin-top: -120px;
 }
 
@@ -138,7 +143,12 @@ VOICE/参加者の声
     width: 98%;
     margin-block: 40px;
     margin-inline: auto;
-    line-height: 1.5;
+}
+
+@include m.tab {
+    .voice-message {
+        margin-block: 32px;
+    }
 }
 
 .voice-list {
@@ -177,6 +187,20 @@ VOICE/参加者の声
     }
 }
 
+@include m.tab {
+    .voice-list {
+        margin-block: 48px;
+    }
+
+    .voice-text-box {
+        padding: 32px 24px;
+
+        .voice-accent {
+            width: 180px;
+        }
+    }
+}
+
 //文章枠の色変え
 .voice-list {
     li {
@@ -201,13 +225,13 @@ VOICE/参加者の声
 }
 
 .voice-text-title {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     font-family: v.$font-biz;
-    font-size: v.$fs24;
-    font-weight: bold;
-    letter-spacing: v.$ls4;
-    line-height: v.$lh14;
+    font-size: v.$fs20;
     color: v.$color-brown;
+    font-weight: bold;
+    line-height: v.$lh14;
+    letter-spacing: v.$ls4;
 }
 
 @include m.pc {
@@ -218,7 +242,6 @@ VOICE/参加者の声
 
 
 .voice-text {
-    font-family: v.$font-nsj;
     font-size: v.$fs16;
 }
 
@@ -235,8 +258,8 @@ VOICE/参加者の声
 .pc-voice-img {
     position: relative;
     z-index: 1;
-    width: 40%;
-    margin-bottom: 48px;
+    width: 32%;
+    margin-bottom: 24px;
     margin-left: -48px;
     box-shadow: 8px 8px 4px v.$accent-red04;
 

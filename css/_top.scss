@@ -4,7 +4,7 @@
 .top-visual-inner {
     background-color: v.$color-beige;
     border-radius: v.$br24;
-    margin-top: 120px;
+    margin-top: 88px;
 }
 
 @include m.pc {
@@ -143,9 +143,10 @@
     a {
         display: inline-block;
         padding: 8px 20px;
-        border-radius: v.$br9999;
         background-color: v.$fc-white;
+        box-shadow: 0px 4px 4px rgba(173, 156, 128, 0.5);
         border: 1px solid v.$color-brown;
+        border-radius: v.$br9999;
         color: v.$color-brown;
         transition: v.$animation03;
 
@@ -158,13 +159,14 @@
 
         &:hover {
             background-color: v.$color-brown;
+            box-shadow: none;
             color: v.$fc-white;
+            transform: translateY(4px);
         }
 
         &:hover::after {
             transform: translateX(8px);
         }
-
     }
 }
 
@@ -212,11 +214,14 @@
 
 .pickup-title {
     display: flex;
+    align-items: center;
     gap: 24px;
     padding: 24px;
 
     .pickup-news-day {
         width: 84px;
+        font-family: v.$font-biz;
+        font-size: v.$fs14;
     }
 
     .pickup-news-title {
@@ -229,7 +234,8 @@
 @include m.pc {
     .pickup-title {
         flex-direction: column;
-        gap: 0;
+        align-items: flex-start;
+        gap: 4px;
     }
 }
 
@@ -239,6 +245,9 @@
     text-align: right;
 
     a {
+        position: relative;
+        z-index: 1;
+        font-size: v.$fs14;
         color: v.$fc-brown;
         transition: v.$animation03;
 
@@ -435,10 +444,11 @@ mainコンテンツ
         display: inline-block;
         padding: 8px 48px;
         background-color: v.$accent-orange;
-        border-radius: v.$br9999;
         box-shadow: 0px 4px 4px rgba(173, 156, 128, 0.5);
+        border: 3px solid v.$accent-red;
+        border-radius: v.$br9999;
         font-family: v.$font-sm;
-        font-size: v.$fs32;
+        font-size: v.$fs24;
         transition: v.$animation03;
 
 
@@ -450,7 +460,7 @@ mainコンテンツ
         }
 
         &:hover {
-            background-color: v.$color-brown;
+            background-color: v.$accent-red;
             box-shadow: none;
             transform: translateY(4px);
         }
@@ -474,9 +484,21 @@ mainコンテンツ
 /* ------------------------------
 ABOUT US/私たちにについて
 ------------------------------ */
-.about-message {
-    padding-block: 152px 32px;
+#about {
+    padding-block: 128px 32px;
     margin-top: -120px;
+}
+
+@include m.pc {
+    #about {
+        padding-top: 88px;
+        margin-top: -64px;
+    }
+}
+
+
+.about-message {
+    margin-top: 24px;
     text-align: center;
 }
 
@@ -484,7 +506,7 @@ ABOUT US/私たちにについて
     display: inline-block;
     margin-bottom: 16px;
     border-bottom: 1px solid v.$color-brown;
-    font-size: v.$fs32;
+    font-size: v.$fs24;
     letter-spacing: -0.08em;
 }
 
@@ -516,6 +538,13 @@ ABOUT US/私たちにについて
     text-align: left;
 }
 
+@include m.pc {
+    .about-message-text {
+        font-size: v.$fs16;
+    }
+}
+
+
 //aboutコンテンツ
 .about-items {
     margin-bottom: 64px;
@@ -530,7 +559,7 @@ ABOUT US/私たちにについて
 .about-item {
     position: relative;
     padding: 40px;
-    margin-top: 64px;
+    margin-top: 100px;
     background-image: url(../img/about01-bg.png);
     background-repeat: no-repeat;
     background-position: center;
@@ -538,21 +567,18 @@ ABOUT US/私たちにについて
 
     &:nth-child(2) {
         background-image: url(../img/about02-bg.png);
+        margin-top: 64px;
     }
 
     &:nth-child(3) {
-        margin-top: 80px;
+        margin-top: 120px;
     }
 }
 
 @include m.pc {
     .about-item {
         padding: 24px 32px;
-        margin-top: 32px;
-
-        &:nth-child(3) {
-            margin-top: 32px;
-        }
+        margin-top: 72px;
     }
 }
 
@@ -574,7 +600,7 @@ ABOUT US/私たちにについて
 
 .about-number {
     position: absolute;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 @include m.pc {
@@ -596,7 +622,7 @@ ABOUT US/私たちにについて
 
 @include m.pc {
     .about-img {
-        width: 30%;
+        width: 24%;
     }
 }
 
@@ -650,29 +676,28 @@ ABOUT US/私たちにについて
 }
 
 .about-texts {
-    padding: 80px 40px 40px 40px;
+    padding: 80px 40px 40px 56px;
 
     .about-texts-title {
-        width: 60%;
-        margin-bottom: 8px;
+        width: 80%;
+        margin-bottom: 6px;
         font-family: v.$font-biz;
-        font-size: v.$fs22;
-        line-height: 1.4;
-        letter-spacing: 0.04em;
+        font-size: v.$fs20;
+        font-weight: bold;
+        line-height: v.$lh14;
+        letter-spacing: v.$ls4;
         text-align: left;
         color: v.$color-brown;
     }
 
     .about-texts-text {
         font-size: v.$fs16;
-        line-height: 1.5;
-        letter-spacing: 0.05em;
     }
 }
 
 @include m.pc {
     .about-texts {
-        padding: 100px 40px 56px 40px;
+        padding: 100px 40px 56px 56px;
 
         .about-texts-title {
             width: 70%;
@@ -723,13 +748,10 @@ ABOUT US/私たちにについて
 
 //about02の文章
 .about-item02 {
-    .about-texts-title {
-        width: 64%;
-        margin-left: auto;
-    }
 
+    .about-texts-title,
     .about-texts-text {
-        width: 64%;
+        width: 66%;
         margin-left: auto;
     }
 }
@@ -766,9 +788,9 @@ ABOUT US/私たちにについて
 
     .about-responsive-img {
         display: block;
-        width: 70%;
+        width: 60%;
         margin-inline: auto;
-        margin-bottom: 24px;
+        margin-bottom: 16px;
     }
 }
 
@@ -928,8 +950,8 @@ FLOW/入会申し込みの流れ
             font-family: v.$font-biz;
             font-weight: bold;
             color: v.$fc-brown;
-            line-height: 1.4;
-            letter-spacing: 0.08em;
+            line-height: v.$lh14;
+            letter-spacing: v.$ls4;
         }
     }
 }
@@ -946,10 +968,17 @@ Q&A/よくあるご質問
     p {
         font-family: "BIZ UDPGothic", sans-serif;
         color: v.$fc-brown;
-        line-height: 1.4;
-        letter-spacing: 0.08em;
+        line-height: v.$lh14;
+        letter-spacing: v.$ls4;
     }
 }
+
+@include m.tab {
+    .ac-area {
+        margin-block: 32px 48px;
+    }
+}
+
 
 .ac-item {
     background-color: v.$color-white;

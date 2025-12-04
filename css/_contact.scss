@@ -74,7 +74,7 @@
 contact/Q&A
 ------------------------------ */
 #page-faq {
-    padding-top: 152px;
+    padding-top: 128px;
     margin-top: -120px;
 }
 
@@ -89,7 +89,7 @@ contact/Q&A
 contact/お問い合わせについて
 ------------------------------ */
 #page-contact {
-    padding-top: 152px;
+    padding-top: 128px;
     margin-top: -120px;
     margin-bottom: 64px;
 }
@@ -198,7 +198,7 @@ contact/お問い合わせについて
 .lesson-list {
     margin-bottom: 24px;
 
-    li {
+    p {
         &::before {
             content: "・";
             color: v.$accent-red;
