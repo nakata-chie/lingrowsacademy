@@ -847,9 +847,6 @@ ABOUT US/私たちにについて
   text-align: left;
   color: #60451B;
 }
-.about-texts .about-texts-text {
-  font-size: 1rem;
-}
 
 @media screen and (max-width: 1024px) {
   .about-texts {
@@ -1437,13 +1434,9 @@ VOICE/参加者の声
 
 @media screen and (max-width: 1024px) {
   .voice-text-title {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 }
-.voice-text {
-  font-size: 1rem;
-}
-
 .sp-voice-img {
   display: none;
 }

@@ -236,13 +236,8 @@ VOICE/参加者の声
 
 @include m.pc {
     .voice-text-title {
-        font-size: v.$fs20;
+        font-size: v.$fs18;
     }
-}
-
-
-.voice-text {
-    font-size: v.$fs16;
 }
 
 .sp-voice-img {

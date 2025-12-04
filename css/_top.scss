@@ -689,10 +689,6 @@ ABOUT US/私たちにについて
         text-align: left;
         color: v.$color-brown;
     }
-
-    .about-texts-text {
-        font-size: v.$fs16;
-    }
 }
 
 @include m.pc {
